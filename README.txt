@@ -11,6 +11,15 @@ Main features:
 1. Users can check their net transactions with other users at real-time.
 2. Users can check their financial bonds with other users at real-time.
 
+The data pipeline consists of the following:
+a. Venmo data stored in S3 is sent to Kinesis,
+b. Kinesis sends the data1 to Lambda,
+c. Lambda queries historical data2 from Dynamodb,
+d. Lambda processes the data2 using data 1, and stores the result back to Dynamodb,
+e. A web application built by Flask queries data from Dynamodb. 
+
+
+
 Definition of net transation:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) the net transaction from user i to user j to be the sum of T(i,j,t) over all t.
 
