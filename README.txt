@@ -31,4 +31,11 @@ Definition of financial bond of degree n:
 Consider a weighted graph G, whose vertices are all the users, and there is an edge E(i,j) connecting vertex i and vertex j if and only if there is a transaction from user i to user j or from user j to user i. The weight for E(i,j) is defined to be A(i,j) the absolute transaction between user i and user j. Note that the edges are not directed. 
 
 For fixed vertices i and j, and for a fixed natural number n, we consider all the paths in G connect i and j using less than or equal to n edges. We define a subgraph G(n) of G to be the union of these paths in the obvious sense. Now we consider the maximal flow problem:
-There is a source at vertex i, there is a sink at vertex j. Incompressible liquid can flow along the edges of the graph G(n). Each edge E(p,q) of G(n) alows a maximal flow of A(p,q) gallons per second, now we define  the maximal flow from source i to source
+Imagine that there is a source at vertex i and a sink at vertex j. Incompressible liquid can flow along the edges of the graph G(n). Each edge E(p,q) of G(n) alows a maximal flow of A(p,q) gallons per second. At each vertex other than vertex i and j, we require the flows going in is the same as the flow coming out. 
+We define the financial bond of degree n to be the maximal flow per second from source i to source j.
+
+Remark: 
+One can easily see that the two definitions of financial bonds of degree one agree.
+
+Example:
+User i sends $5 to user j, user j sends $10 to user k. Then the financial bond of degree 2 between user i and user j is $10. For example, user j and user k are actually belong to the same real person (common for bitcoin), and this person transfers money between two accounts of her own. Then the financial bond of degree two roughly group user i and user j as the same one without knowing that they actually are the same user. 
