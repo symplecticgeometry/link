@@ -1,0 +1,78 @@
+{% extends "mybase.html" %}
+{% block searchresults %}
+<div class="container">
+   <div class="starter-template">
+      <div class="row" style="height:20vh;">
+         <div class="col-md-10 col-md-offset-1">
+            <table class="table">
+               <thead>
+                  <tr>
+                     <td>user id</td>
+                     <td>user balance</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for val in output %}
+                  <tr>
+                     <td>{{val.userid}}</td>
+                     <td>{{val.balance}}</td>
+                  </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+   <label style="font-weight:300; font-size:17px;">Transaction amount from user {% for val in output %} {{val.user1id}} {% endfor %} to user {% for val in output %} {{val.user2id}} {% endfor %}:</label>
+   <div class="starter-template">
+      <div class="row" style="height:5vh;">
+         <div class="col-md-10 col-md-offset-1">
+            <table class="table">
+               <thead>
+                  <tr>
+                     <td>net transaction</td>
+                     <td>abs transaction</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for val in output %}
+                  <tr>
+                     <td>{{val.str_net_tran}}</td>
+                     <td>{{val.str_abs_tran}}</td>
+                  </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- The following script is in charge of reload the webpage every 3 seconds. -->
+<!-- 
+   <body>
+    <p id="time">3</p>
+   </body>
+    -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+   $(window).ready( function() {
+       
+       var time = 3
+      
+       setInterval( function() {
+           
+           time--;
+           
+           $('#time').html(time);
+           
+           if (time === 0) {
+               
+               location.reload()
+           }    
+           
+       }, 1000 );
+       
+   });
+   
+</script>
+{% endblock %}

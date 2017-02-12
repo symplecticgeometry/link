@@ -1,0 +1,64 @@
+{% extends "mybase.html" %}
+{% block alltransactions %}
+<div class="container">
+    <div class="starter-template">
+        <div class="row" style="height:100vh;">
+            <div class="col-md-10 col-md-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>user id</th>
+                            <th>transaction id</th>
+                            <th>transaction amount (from me)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for val in output %}
+                        <tr>
+                            <th>{{val.user2id}}</th>
+                            <th>{{val.transactionid}}</th>
+                            <th>${{val.transactionamount}}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The following script is in charge of reload the webpage every 3 seconds. -->
+
+<!-- 
+<body>
+ <p id="time">3</p>
+</body>
+ -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+</script>
+
+<script>
+
+
+$(window).ready( function() {
+    
+    var time = 3
+   
+    setInterval( function() {
+        
+        time--;
+        
+        $('#time').html(time);
+        
+        if (time === 0) {
+            
+            location.reload()
+        }    
+        
+    }, 1000 );
+    
+});
+
+</script>
+{% endblock %}

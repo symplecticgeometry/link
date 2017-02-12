@@ -1,0 +1,1 @@
+We are from the Insight Data Engineering Fellows program. The program is designed for people with strong knowledge of computer science fundamentals to transition to a career in data engineering.  Insight gives us space to get hands on experience building distributed platforms on AWS and using open source technologies. We built these platforms in 3 weeks

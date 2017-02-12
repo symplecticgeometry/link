@@ -1,0 +1,29 @@
+{% extends "mybase.html" %}
+{% block otherusers %}
+<div class="container">
+    <div class="starter-template">
+        <div class="row" style="height:100vh;">
+            <div class="col-md-10 col-md-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>user id</th>
+                            <th>net transaction</th>
+                            <th>abs transaction</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for val in output %}
+                        <tr>
+                            <th>{{val.user2id}}</th>
+                            <th>{{val.net_transaction}}</th>
+                            <th>{{val.abs_transaction}}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

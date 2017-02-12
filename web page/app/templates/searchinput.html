@@ -1,0 +1,34 @@
+{% extends "mybase.html" %} <!--this means that you are extending the base tempate -->
+{% block searchinput %} <!-- this is the name of the block below -->
+<div class="row" style="height:80vh;">
+   <div class="col-md-4 col-md-offset-4" style="margin-top:10vh;">
+      <form action"searchresults" method="POST">
+         <!-- action is the html template that will return the result to this input query -->
+         <div class="form-group text-center">
+            <label style="font-weight:300; font-size:10px;">For demonstration purpose, 
+            besides the huge amount of real users (for example, 43081, 43914), each of whom 
+            makes transactions occasionally, fake users (9999x, x = 1, 2, ..., 99) are added. 
+            For queries about the fake users, please be aware that the amount of transactons 
+            might be huge before using the option "transactions".</label>
+            <br /><br />
+            <label style="font-weight:300; font-size:20px;">Type in a user-id to check balance</label>
+            <br /><br />
+            <input type="text" class="form-control" id="userid" name="userid" placeholder="99995">
+            <select class="form-control" name="choice">
+               <option>balance</option>
+               <option>where does my money go</option>
+               <option>transactions</option>
+            </select>
+            <button type="submit" value="Send" name="searchinput-container1" class="btn btn-default id-submit">Submit</button>
+         </div>
+         <div class="form-group text-center">
+            <label style="font-weight:300; font-size:20px;">Type in two user-ids to see transactions</label>
+            <br /><br />
+            <input type="text" class="form-control" id="user1id" name="user1id" placeholder="999911">
+            <input type="text" class="form-control" id="user2id" name="user2id" placeholder="999923">
+            <button type="submit" value="Send" name="searchinput-container2" class="btn btn-default id-submit">Submit</button>
+         </div>
+      </form>
+   </div>
+</div>
+{% endblock %}
