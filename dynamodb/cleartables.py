@@ -10,7 +10,7 @@ from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
 import sys
 
-'''This function delete all elements in the dynamodb talbe alltransactions, allusers3, userbalance '''
+'''This function deletes all elements in the dynamodb talbe alltransactions, allusers3, userbalance; it is only used for debuging'''
 
 dynamodb = boto3.resource('dynamodb')
 
