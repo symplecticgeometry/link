@@ -21,8 +21,6 @@ class DecimalEncoder(json.JSONEncoder):
 def UpdateUserTable(list):
 
 	[user_id1, user_id2, trans_id, trans_amnt, table_ub, table_u] = list
-	
-
 
 	# we update the userbalance table
 	try:
@@ -85,7 +83,7 @@ def UpdateUserTable(list):
 		print(' put the 0 item to the table allusers3 is OK')
 
 	
-	waterwhite = 0
+	waterwhite = 0   # this tag is used to detect whether the data in dynamodb is changed after read and before write
 	while waterwhite == 0:
 		
 		response_abs_net = table_u.get_item(
@@ -122,7 +120,6 @@ def UpdateUserTable(list):
 		
 		else: 
 			waterwhite = 1	
-	
 	
 		print('allusers3 table updated')
 
@@ -190,11 +187,7 @@ def lambda_handler(event, context):
 					}
 				)
 				
-				print("PutItem on mirror data succeeded:")
-				
-				# start from here we deal with the original transaction. 
-				# get data from the allusers table
-				
+				print("PutItem on mirror data succeeded:")				
 				
 				UpdateUserTable([user_id1, user_id2, trans_id, trans_amnt, table_ub, table_u])
 				
