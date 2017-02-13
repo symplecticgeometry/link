@@ -18,8 +18,6 @@ c. Lambda queries historical data2 from Dynamodb,
 d. Lambda processes the data2 using data 1, and stores the result back to Dynamodb,
 e. A web application built by Flask queries data from Dynamodb. 
 
-
-
 Definition of net transation:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) the net transaction from user i to user j to be the sum of T(i,j,t) over all t.
 
@@ -47,4 +45,4 @@ Remark:
 One can easily see that the two definitions of financial bonds of degree one agree.
 
 Example:
-User i sends $5 to user j, user j sends $10 to user k. Then the financial bond of degree 2 between user i and user j is $10. For example, user j and user k are actually belong to the same real person (common for bitcoin), and this person transfers money between two accounts of her own. Then the financial bond of degree two roughly group user i and user j as the same one without knowing that they actually are the same user. 
+User i sends $5 to user j, user j sends $10 to user k. Then the financial bond of degree 2 between user i and user j is $10. For example, user j and user k are actually belong to the same real person (common for bitcoin), and this person transfers money between two accounts of her own. In a sense, the financial bond of degree two roughly group user i and user j as the same user without knowing that they are. 
