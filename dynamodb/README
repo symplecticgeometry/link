@@ -1,0 +1,13 @@
+There are three tables stored in dynamodb:
+
+1. alltransactions:
+  each item consists of two user ids, a transaction id, and a transaction amount
+  partition key: user1 id, sort key: user 2 id
+  
+2. userbalance:
+  each item consists of one user id and the balance of this user
+  partition key: user id, sort key: Null
+
+3. allusers:
+  each item consists of two user ids and the net and absolute transactions between the two users
+  partition key: user1 id, sort key: user2 id
