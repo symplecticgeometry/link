@@ -7,11 +7,7 @@ They are used to send data into kinesis.
 
 Venmo transaction data is collected and stored in Amazon s3. 
 
-Use froms3tokinesis.py a time parameter to send Venmo transaction data to kinesis:
-Set the time parameter to 1 to send the transaction data of year 2010-2013,
-Set the time parameter to 2 to send the transaction data of year 2014,
-Set the time parameter to 3 to send the transaction data of year 2015,
-Set the time parameter to 4 to send the transaction data of year 2016,
+Use froms3tokinesis.py with a year parameter (2010, 2011,..., 2016) to send Venmo transaction data to kinesis.
 
 Use froms3tokinesisfake.py to send the simulated data. *
 
