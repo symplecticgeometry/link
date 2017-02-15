@@ -8,8 +8,8 @@ link is a streaming data pipeline for a digital wallet.
 * It lowers transaction risks. 
 
 ## Main features:
-1. Users can check their net transactions with other users at real-time, and
-2. Users can check their financial bonds with other users at real-time.
+* Users can check their net transactions with other users at real-time, and
+* Users can check their financial bonds with other users at real-time.
 
 ## The data pipeline consists of the following:
 1. Venmo data stored in S3 is sent to Kinesis,
@@ -25,13 +25,13 @@ link is a streaming data pipeline for a digital wallet.
 4. Run tornadoapp.py in the web page.
 
 # Definition of net transation:
-Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) *the net transaction from user i to user j* to be the sum of T(i,j,t) over all t.
+Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) __the net transaction from user i to user j__ to be the sum of T(i,j,t) over all t.
 
 # Remark: 
 Note that since T(i,j,t) = -T(j,i,t), we have N(i,j)= - N(j,i).
 
-Definition of absolute transaction:
-Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define A(i,j) the absolute transaction from user i to user j to be the sum of |T(i,j,t)| over all t, where |*| stands for the absolute value of *.
+# Definition of absolute transaction:
+Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define A(i,j) __the absolute transaction from user i to user j__ to be the sum of |T(i,j,t)| over all t, where |*| stands for the absolute value of *.
 
 Remark: Since A(i,j,t) = A(j,i,t), instead of saying the absolute transaction from user i to user j, we usually say the abolute transaction between user i and user j. 
 
