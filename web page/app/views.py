@@ -28,9 +28,7 @@ def transactionsearch_post():
 	table_t = dynamodb.Table('alltransactions')
 	table_u = dynamodb.Table('allusers3')
 	table_ub = dynamodb.Table('userbalance')
-	
-	print (user1_id, user2_id)
-	
+		
 	# query balance below
 
 
