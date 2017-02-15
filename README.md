@@ -3,31 +3,32 @@ This project is done under the Insight Data Engineering Fellows program. The pro
 ## What is link?
 link is a streaming data pipeline for a digital wallet. 
 
-Why link?
-It gives user better control of their finance.
-It lowers transaction risks. 
+## Why link?
+* It gives user better control of their finance, and
+* It lowers transaction risks. 
 
-Main features:
-1. Users can check their net transactions with other users at real-time.
+## Main features:
+1. Users can check their net transactions with other users at real-time, and
 2. Users can check their financial bonds with other users at real-time.
 
-The data pipeline consists of the following:
-a. Venmo data stored in S3 is sent to Kinesis,
-b. Kinesis sends the data1 to Lambda,
-c. Lambda queries historical data2 from Dynamodb,
-d. Lambda processes the data2 using data 1, and stores the result back to Dynamodb,
-e. A web application built by Flask queries data from Dynamodb. 
+## The data pipeline consists of the following:
+1. Venmo data stored in S3 is sent to Kinesis,
+2. Kinesis sends the data1 to Lambda,
+3. Lambda queries historical data2 from Dynamodb,
+4. Lambda processes the data2 using data 1, and stores the result back to Dynamodb, and
+5. A web application built by Flask queries data from Dynamodb. 
 
-How to run link?
+## How to run link?
 1. Create a stream in Kinesis and run the script froms3tokinesisreal.py in the folder kinesis;
 2. Upload the script balanceupdate.py in folder lambda to Amazon lambda;
 3. Build three tables in Dynamodb as instructed in README in the folder dynamodb;
 4. Run tornadoapp.py in the web page.
 
-Definition of net transation:
-Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) the net transaction from user i to user j to be the sum of T(i,j,t) over all t.
+# Definition of net transation:
+Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) *the net transaction from user i to user j* to be the sum of T(i,j,t) over all t.
 
-Remark: Note that since T(i,j,t) = -T(j,i,t), we have N(i,j)= - N(j,i).
+# Remark: 
+Note that since T(i,j,t) = -T(j,i,t), we have N(i,j)= - N(j,i).
 
 Definition of absolute transaction:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define A(i,j) the absolute transaction from user i to user j to be the sum of |T(i,j,t)| over all t, where |*| stands for the absolute value of *.
