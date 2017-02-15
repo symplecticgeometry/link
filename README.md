@@ -18,7 +18,7 @@ link is a streaming data pipeline for a digital wallet.
 4. Lambda processes the data2 using data 1, and stores the result back to Dynamodb, and
 5. A web application built by Flask queries data from Dynamodb. 
 
-## Running instruction?
+## Running instructions:
 1. Create a stream in Kinesis and run the script froms3tokinesisreal.py in the folder kinesis;
 2. Upload the script balanceupdate.py in folder lambda to Amazon lambda;
 3. Build three tables in Dynamodb as instructed in README in the folder dynamodb;
