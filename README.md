@@ -37,7 +37,7 @@ __Remark:__
 Since A(i,j,t) = A(j,i,t), instead of saying the absolute transaction from user i to user j, we usually say the abolute transaction between user i and user j. 
 
 ## Definition of financial bond of degree one:
-We define B(i,j,1) __the financial bonds of degree one__ between user i and user j to be A(j,i). 
+We define __B(i,j,1) the financial bonds of degree one__ between user i and user j to be A(j,i). 
 
 __Example:__
 Suppose there are two transactions between user i and user j in total: user i sends to user j $5 at t = 0, and user j sends to user j $5 at t=1. Then B(i,j) = 0 while A(i,j) = 10. From this example, we can see that A(i,j) provides a lot more information about the financial bonds between the two users. In particular, suppose in the future, user i is trying to send $1 to user j, the system can provide the information A(i,j)=10 to user i to assist her/him to judge the risk of this transaction.
@@ -47,7 +47,7 @@ Consider a weighted graph G, whose vertices are all the users, and there is an e
 
 For fixed vertices i and j, and for a fixed natural number n, we consider all the paths in G connect i and j using less than or equal to n edges. We define a subgraph G(n) of G to be the union of these paths in the obvious sense. Now we consider the maximal flow problem:
 Imagine that there is a source at vertex i and a sink at vertex j. Incompressible liquid can flow along the edges of the graph G(n). Each edge E(p,q) of G(n) alows a maximal flow of A(p,q) gallons per second. At each vertex other than vertex i and j, we require the flows going in is the same as the flow coming out. 
-We define the __financial bond of degree n__ to be the maximal flow per second from source i to source j.
+We define __B(i,j,n)__ the __financial bond of degree n__ to be the maximal flow per second from source i to source j.
 
 __Remark:__ 
 One can easily see that the two definitions of financial bonds of degree one agree.
