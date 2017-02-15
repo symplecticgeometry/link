@@ -28,7 +28,7 @@ link is a streaming data pipeline for a digital wallet.
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) __the net transaction from user i to user j__ to be the sum of T(i,j,t) over all t.
 
 __Remark:__
-Note that since \begin{equation} T(i,j,t) = -T(j,i,t) \end{equation}, we have N(i,j)= - N(j,i).
+Note that since T(i,j,t) = -T(j,i,t), we have N(i,j)= - N(j,i).
 
 ## Definition of absolute transaction:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define A(i,j) __the absolute transaction from user i to user j__ to be the sum of |T(i,j,t)| over all t, where |*| stands for the absolute value of *.
