@@ -7,6 +7,7 @@ import re
 from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
 
+
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, decimal.Decimal):
@@ -19,7 +20,9 @@ class DecimalEncoder(json.JSONEncoder):
 
 
 def UpdateUserTable(list):
-
+	'''' this function takes a list [user_id1, user_id2, trans_id, trans_amnt, table_ub, table_u], and update
+	the items related to user_id1 and user_id2 in the table_ub in dynamodb using the trans_amnt''''
+	
 	[user_id1, user_id2, trans_id, trans_amnt, table_ub, table_u] = list
 
 	# we update the userbalance table
@@ -123,6 +126,8 @@ def UpdateUserTable(list):
 
 
 def lambda_handler(event, context):
+	'''this function takes each new transaction record from kinesis, and use the transaction record to update
+	the table alltransactions, allusers3, and userbalance in dynamodb'''
 
 	dynamodb = boto3.resource('dynamodb')
 	table_t = dynamodb.Table('alltransactions')
