@@ -21,8 +21,8 @@ e. A web application built by Flask queries data from Dynamodb.
 How to run link?
 1. Create a stream in Kinesis and run the script froms3tokinesisreal.py in the folder kinesis;
 2. Upload the script balanceupdate.py in folder lambda to Amazon lambda;
-3. Build three tables in Dynamodb as instructed in README in the folder dynamodb.
-4. Run tornadoapp.py in the web application
+3. Build three tables in Dynamodb as instructed in README in the folder dynamodb;
+4. Run tornadoapp.py in the web page.
 
 Definition of net transation:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) the net transaction from user i to user j to be the sum of T(i,j,t) over all t.
