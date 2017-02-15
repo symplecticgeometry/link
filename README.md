@@ -1,13 +1,13 @@
 This project is done under the Insight Data Engineering Fellows program. The program is designed for people with strong knowledge of computer science fundamentals to transition to a career in data engineering.  Insight gives us space to get hands on experience building distributed platforms on AWS and using open source technologies. We built these platforms in 3 weeks.
 
-## What is link?
+# What is link?
 link is a streaming data pipeline for a digital wallet. 
 
-## Why link?
+# Why link?
 * It gives user better control of their finance, and
 * It lowers transaction risks. 
 
-## Main features:
+# Main features:
 * Users can check their net transactions with other users at real-time, and
 * Users can check their financial bonds with other users at real-time.
 
@@ -18,25 +18,26 @@ link is a streaming data pipeline for a digital wallet.
 4. Lambda processes the data2 using data 1, and stores the result back to Dynamodb, and
 5. A web application built by Flask queries data from Dynamodb. 
 
-## How to run link?
+## running instruction?
 1. Create a stream in Kinesis and run the script froms3tokinesisreal.py in the folder kinesis;
 2. Upload the script balanceupdate.py in folder lambda to Amazon lambda;
 3. Build three tables in Dynamodb as instructed in README in the folder dynamodb;
 4. Run tornadoapp.py in the web page.
 
-# Definition of net transation:
+## Definition of net transation:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define N(i,j) __the net transaction from user i to user j__ to be the sum of T(i,j,t) over all t.
 
-# Remark: 
+## Remark: 
 Note that since T(i,j,t) = -T(j,i,t), we have N(i,j)= - N(j,i).
 
-# Definition of absolute transaction:
+## Definition of absolute transaction:
 Let T(i,j,t) be the transaction amount (with unit in $) from user i to user j at time t. Then we define A(i,j) __the absolute transaction from user i to user j__ to be the sum of |T(i,j,t)| over all t, where |*| stands for the absolute value of *.
 
-Remark: Since A(i,j,t) = A(j,i,t), instead of saying the absolute transaction from user i to user j, we usually say the abolute transaction between user i and user j. 
+## Remark: 
+Since A(i,j,t) = A(j,i,t), instead of saying the absolute transaction from user i to user j, we usually say the abolute transaction between user i and user j. 
 
-Definition of financial bond of degree one:
-We define B(i,j,1) the financial bonds of degree one between user i and user j to be A(j,i). 
+## Definition of financial bond of degree one:
+We define B(i,j,1) __the financial bonds of degree one__ between user i and user j to be A(j,i). 
 
 Example:
 Suppose there are two transactions between user i and user j in total: user i sends to user j $5 at t = 0, and user j sends to user j $5 at t=1. Then B(i,j) = 0 while A(i,j) = 10. From this example, we can see that A(i,j) provides a lot more information about the financial bonds between the two users. In particular, suppose in the future, user i is trying to send $1 to user j, the system can provide the information A(i,j)=10 to user i to assist her/him to judge the risk of this transaction.
