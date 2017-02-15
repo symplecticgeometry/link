@@ -120,9 +120,6 @@ def UpdateUserTable(list):
 		
 		else: 
 			waterwhite = 1	
-	
-		print('allusers3 table updated')
-
 
 
 def lambda_handler(event, context):
@@ -149,12 +146,6 @@ def lambda_handler(event, context):
 				trans_amnt = int(trans_data[2])
 				trans_id = str(trans_data[3])
 				
-				print (" length is 4")
-				print("user1 id", user_id1)
-				print("user2 id", user_id2)
-				print('transactionid',trans_id)
-				print('transaction_amount', trans_amnt)
-				
 				# write the original transaction to the alltransactions table
 
 				table_t.put_item(
@@ -165,9 +156,6 @@ def lambda_handler(event, context):
 						'transaction_amount': trans_amnt
 					}
 				)
-
-				print("PutItem on original data succeeded:")
-
 
 				# we build a mirror transaction to this transaction
 				
@@ -186,9 +174,7 @@ def lambda_handler(event, context):
 						'transaction_amount': mtrans_amnt
 					}
 				)
-				
-				print("PutItem on mirror data succeeded:")				
-				
+								
 				UpdateUserTable([user_id1, user_id2, trans_id, trans_amnt, table_ub, table_u])
 				
 				UpdateUserTable([muser_id1, muser_id2, mtrans_id, mtrans_amnt, table_ub, table_u])
