@@ -1,6 +1,6 @@
-We are from the Insight Data Engineering Fellows program. The program is designed for people with strong knowledge of computer science fundamentals to transition to a career in data engineering.  Insight gives us space to get hands on experience building distributed platforms on AWS and using open source technologies. We built these platforms in 3 weeks.
+This project is done under the Insight Data Engineering Fellows program. The program is designed for people with strong knowledge of computer science fundamentals to transition to a career in data engineering.  Insight gives us space to get hands on experience building distributed platforms on AWS and using open source technologies. We built these platforms in 3 weeks.
 
-What is link?
+## What is link?
 link is a streaming data pipeline for a digital wallet. 
 
 Why link?
