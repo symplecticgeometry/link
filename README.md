@@ -45,7 +45,9 @@ Suppose there are two transactions between user i and user j in total: user i se
 ## Definition of financial bond of degree n:
 Consider a weighted graph G, whose vertices are all the users, and there is an edge E(i,j) connecting vertex i and vertex j if and only if there is a transaction from user i to user j or from user j to user i. The __weight__ for E(i,j) is defined to be A(i,j) the absolute transaction between user i and user j. Note that the edges are not directed. 
 
-For fixed vertices i and j, and for a fixed natural number n, we consider all the paths in G connect i and j using less than or equal to n edges. We define a subgraph G(n) of G to be the union of these paths in the obvious sense. We will define the financial bond from vertices i to j to be the maximal flow from vertex i to vertex j. For this purpose, we consider the maximal flow problem:
+For fixed vertices i and j, and for a fixed natural number n, we consider all the paths in G connect i and j using less than or equal to n edges. We define a subgraph G(n) of G to be the union of these paths in the obvious sense. We will define the financial bond from vertices i to j to be the maximal flow from vertex i to vertex j. 
+
+For this purpose, we consider the maximal flow problem:
 Imagine that there is a source at vertex i and a sink at vertex j. Incompressible liquid can flow along the edges of the graph G(n). Each edge E(p,q) of G(n) alows a maximal flow of A(p,q) gallons per second. At each vertex other than vertex i and j, we require the flows going in is the same as the flow coming out. 
 We define B(i,j,n) the __financial bond of degree n__ to be the maximal flow per second from source i to source j.
 
